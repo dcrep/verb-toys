@@ -7,18 +7,19 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-      /* Center the canvas at the top */
-      #unity-canvas {
+      #unity-container {
         position: relative !important;
+        width: auto !important;
+        height: auto !important;
+        margin: 20px auto !important;
+        display: block !important;
+        z-index: 0 !important;
+      }      
+      #unity-canvas {
         display: block;
-        margin: 20px auto;
-        z-index: 1;
+        margin: 0 auto;
       }
-  
-      /* Ensure the description flows underneath */
       #description {
-        position: relative;
-        z-index: 2;
         max-width: 800px;
         margin: 20px auto;
         padding: 0 20px;
