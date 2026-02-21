@@ -7,15 +7,17 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-      #unity-container,
-      .unity-desktop {
+      #unity-container.unity-desktop {
         position: relative !important;
         width: auto !important;
         height: auto !important;
         margin: 20px auto !important;
         display: block !important;
         overflow: visible !important;
-        z-index: 0 !important;
+      
+        /* These two lines are the real fix */
+        align-items: flex-start !important;
+        justify-content: flex-start !important;
       }
       #unity-canvas {
         display: block;
