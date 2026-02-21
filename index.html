@@ -157,12 +157,11 @@
 
     </script>
     <script>
-      // Remove Unity's vertical centering transform but keep scaling
       const canvas = document.getElementById('unity-canvas');
     
       const observer = new MutationObserver(() => {
         if (canvas && canvas.style.transform.includes('translate')) {
-          const scaleMatch = canvas.style.transform.match(/scale\\([^)]*\\)/);
+          const scaleMatch = canvas.style.transform.match(/scale\([^)]*\)/);
           const scale = scaleMatch ? scaleMatch[0] : '';
           canvas.style.transform = scale; // keep scale, remove translate
         }
