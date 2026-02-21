@@ -9,4 +9,6 @@ Playable at https://dcrep.github.io/verb-toys/
 
 Left-click on either the grapple point or a balloon and Drag over to the 'runners' to help avoid the gap
 
+Source at https://github.com/2026-01-GDEV290/2026-01-290-toy1-allofus/tree/danielc
+
 Objects created using Unity primitives
