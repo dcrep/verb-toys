@@ -14,10 +14,8 @@
         margin: 20px auto !important;
         display: block !important;
         overflow: visible !important;
-      
-        /* These two lines are the real fix */
         align-items: flex-start !important;
-        justify-content: flex-start !important;
+        justify-content: center !important;
       }
       #unity-canvas {
         display: block;
@@ -27,6 +25,7 @@
         max-width: 800px;
         margin: 20px auto;
         padding: 0 20px;
+        font-family: sans-serif;
       }
     </style>
   </head>
@@ -157,5 +156,20 @@
       document.body.appendChild(script);
 
     </script>
+    <script>
+      // Remove Unity's vertical centering transform but keep scaling
+      const canvas = document.getElementById('unity-canvas');
+    
+      const observer = new MutationObserver(() => {
+        if (canvas && canvas.style.transform.includes('translate')) {
+          const scaleMatch = canvas.style.transform.match(/scale\\([^)]*\\)/);
+          const scale = scaleMatch ? scaleMatch[0] : '';
+          canvas.style.transform = scale; // keep scale, remove translate
+        }
+      });
+    
+      observer.observe(canvas, { attributes: true, attributeFilter: ['style'] });
+    </script>
+
   </body>
 </html>
