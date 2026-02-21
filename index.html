@@ -7,26 +7,6 @@
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
     <style>
-      #unity-container.unity-desktop {
-        position: relative !important;
-        width: auto !important;
-        height: auto !important;
-        margin: 20px auto !important;
-        display: block !important;
-        overflow: visible !important;
-        align-items: flex-start !important;
-        justify-content: center !important;
-      }
-      #unity-canvas {
-        display: block;
-        margin: 0 auto;
-      }
-      #description {
-        max-width: 800px;
-        margin: 20px auto;
-        padding: 0 20px;
-        font-family: sans-serif;
-      }
     </style>
   </head>
   <body>
@@ -156,19 +136,5 @@
       document.body.appendChild(script);
 
     </script>
-    <script>
-      const canvas = document.getElementById('unity-canvas');
-    
-      const observer = new MutationObserver(() => {
-        if (canvas && canvas.style.transform.includes('translate')) {
-          const scaleMatch = canvas.style.transform.match(/scale\([^)]*\)/);
-          const scale = scaleMatch ? scaleMatch[0] : '';
-          canvas.style.transform = scale; // keep scale, remove translate
-        }
-      });
-    
-      observer.observe(canvas, { attributes: true, attributeFilter: ['style'] });
-    </script>
-
   </body>
 </html>
